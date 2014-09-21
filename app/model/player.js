@@ -3,15 +3,15 @@
     this.opponent;
     this.status;
     this.name = build.name;
-    this.life = build.maxLife;
-    this.maxLife = build.maxLife;
+    this.life = build.maxLife();
+    this.maxLife = build.maxLife();
     this.meter = build.maxMeter;
     this.maxMeter = build.maxMeter;
     this.meterOnHit = build.meterOnHit;
     this.mitigationPercent = calculateMitigation(build);
     this.lifePerSecond = build.lifePerSecond;
     this.lifeOnHit = build.lifeOnHit;
-    
+
     build.primaryAttack.attacksPerSecond = build.attacksPerSecond;
     build.secondaryAttack.attacksPerSecond = build.attacksPerSecond;
 
@@ -48,7 +48,7 @@
             this.status = "Dead"
         }
 
-        
+
     }
 
     this.heal = function (durationInMillis) {
@@ -57,7 +57,7 @@
     }
 
     this.healOnHit = function () {
-    
+
         this.healer.healForHit();
     }
 
